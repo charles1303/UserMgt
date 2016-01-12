@@ -1,2 +1,58 @@
-h1= title
-p Welcome to #{title}
+extends layout
+
+block content
+  h1= title
+  p Welcome
+
+    // Wrapper
+    #wrapper
+
+        // USER LIST
+        h2 User List
+        #userList
+            table
+                thead
+                    th UserName
+                    th Email
+                    th Delete?
+                tbody
+        // /USER LIST
+
+        // USER INFO
+        #userInfo
+            h2 User Info
+            p
+                strong Name:
+                |  <span id='userInfoName'></span>
+                br
+                strong Age:
+                |  <span id='userInfoAge'></span>
+                br
+                strong Gender:
+                |  <span id='userInfoGender'></span>
+                br
+                strong Location:
+                |  <span id='userInfoLocation'></span>
+        // /USER INFO
+
+        // ADD USER
+        h2 Add User
+        #addUser
+            fieldset
+                input#inputUserName(type='text', placeholder='Username' name='username')
+                input#inputUserEmail(type='text', placeholder='Email' name='email')
+                br
+                input#inputUserFullname(type='text', placeholder='Full Name' name='fullname')
+                input#inputUserAge(type='text', placeholder='Age' name='age')
+                br
+                input#inputUserLocation(type='text', placeholder='Location' name='location')
+                input#inputUserGender(type='text', placeholder='gender' name='gender')
+                br
+                input#inputUserPassword(type='text', placeholder='password' name='password')
+                br
+                button#btnAddUser Add User
+        // /ADD USER
+
+    // /WRAPPER
+
+
