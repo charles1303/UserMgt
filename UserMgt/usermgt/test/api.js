@@ -13,12 +13,8 @@ describe("SAMPLE unit test",function(){
   // #1 should return home page
 
   it("should return home page",function(done){
-     -------------------------------------
-  });
-
-  it("should add two number",function(done){
-
-    //calling ADD api
+  
+    //calling api
     server
     .get('/api/employees')
     .expect("Content-type",/json/)
