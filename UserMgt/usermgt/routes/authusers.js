@@ -1,6 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser  = require('body-parser');
+var jwt    = require('jsonwebtoken');
+var logger = new(winston.Logger)({
+    transports : [
+        new(winston.transports.MongoDB)({
+            db : 'logs',
+            host : 'http://localhost',
+            username : '',
+            password : ''
+        })
+    ]
+});
 
 
 // use body parser so we can get info from POST and/or URL parameters
