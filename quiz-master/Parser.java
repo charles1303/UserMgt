@@ -1,3 +1,5 @@
+package main;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -7,17 +9,21 @@ import java.io.IOException;
  */
 public class Parser {
 
-private Parser instance;
+private static Parser instance;
 
-private File file;
+private static File file;
 
     private Parser() {
         //lots of initialization code
     }
 
-    public static synchronized Parser getInstance() {
+    public static synchronized Parser getInstance(File f) {
         if(instance == null) {
             instance = new Parser();
+            if(file == null){
+              instance.setFile(f);
+            }
+            
         }
         return instance;
     }
@@ -57,3 +63,4 @@ private File file;
     }
   }
 }
+
